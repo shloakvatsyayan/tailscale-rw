@@ -5,7 +5,7 @@
 FROM debian:bookworm-slim
 
 ARG TAILSCALE_VERSION=1.102.3
-ARG COREDNS_VERSION=1.12.1
+ARG COREDNS_VERSION=1.14.7
 
 # iproute2: start.sh reads the route table to detect the private subnets.
 # coredns: only used when TS_DNS_ALIAS_SUFFIX is set (DNS suffix aliasing).
