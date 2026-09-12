@@ -212,3 +212,11 @@ work; pick this to make whole projects reachable by real names, any protocol.
   variable — use the label in front of `.railway.internal` with your alias suffix.
 - **Node missing from the tailnet** → check deploy logs; a missing/expired
   `TAILSCALE_AUTHKEY` prints an explicit error and exits after 30s.
+
+## Outbound SOCKS connections
+
+Set `TS_SOCKS5_SERVER=[::]:1055` to let services in this Railway environment
+connect to tailnet hosts through a SOCKS5 proxy. It is disabled when unset.
+Keep the listener private: do not attach a public domain or TCP proxy to it.
+MongoDB's Java driver supports the `proxyHost` and `proxyPort` connection options;
+use the database host's Tailscale IP and this service's Railway private hostname.

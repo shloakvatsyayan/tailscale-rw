@@ -37,6 +37,7 @@ mkdir -p /var/run/tailscale /var/lib/tailscale
 
 tailscaled \
   --tun=userspace-networking \
+  --socks5-server="${TS_SOCKS5_SERVER:-}" \
   --state=/var/lib/tailscale/tailscaled.state \
   --socket=/var/run/tailscale/tailscaled.sock &
 TAILSCALED_PID=$!
