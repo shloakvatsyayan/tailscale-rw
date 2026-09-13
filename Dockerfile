@@ -4,7 +4,7 @@
 # every service at <name>.railway.internal with no public exposure.
 FROM debian:bookworm-slim
 
-ARG TAILSCALE_VERSION=1.102.3
+ARG TAILSCALE_VERSION=1.102.4
 ARG COREDNS_VERSION=1.14.7
 
 # iproute2: start.sh reads the route table to detect the private subnets.
